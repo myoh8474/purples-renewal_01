@@ -291,20 +291,30 @@ function initCh5Slider() {
     if (!slider) return;
 
     const slides = slider.querySelectorAll('.ch5-slide');
-    const dots = slider.querySelectorAll('.ch5-dot');
     const prevBtn = slider.querySelector('.ch5-prev');
     const nextBtn = slider.querySelector('.ch5-next');
+    const currentEl = slider.querySelector('.ch5-current');
     let current = 0;
+    let autoplayTimer;
 
     function goTo(idx) {
         slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
         current = (idx + slides.length) % slides.length;
         slides[current].classList.add('active');
-        dots[current].classList.add('active');
+        if (currentEl) currentEl.textContent = current + 1;
     }
 
-    prevBtn.addEventListener('click', () => goTo(current - 1));
-    nextBtn.addEventListener('click', () => goTo(current + 1));
-    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+    function startAutoplay() {
+        autoplayTimer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    function resetAutoplay() {
+        clearInterval(autoplayTimer);
+        startAutoplay();
+    }
+
+    prevBtn.addEventListener('click', () => { goTo(current - 1); resetAutoplay(); });
+    nextBtn.addEventListener('click', () => { goTo(current + 1); resetAutoplay(); });
+
+    startAutoplay();
 }

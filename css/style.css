@@ -1039,6 +1039,7 @@ img { max-width: 100%; display: block; }
     aspect-ratio: 4 / 3;
     background: #E8E8E8;
     border-radius: 0;
+    border: 1px solid #D0D0CC;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -2080,4 +2081,33 @@ img { max-width: 100%; display: block; }
 .ch5-dot.active {
     background: #fff;
     transform: scale(1.3);
+}
+
+/* 슬라이드 이미지 */
+.ch5-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 슬라이더 카운터 */
+.ch5-slider-counter {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-en);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 2px;
+    z-index: 3;
+    background: rgba(0,0,0,0.3);
+    padding: 4px 14px;
+    backdrop-filter: blur(4px);
+}
+
+.ch5-slider-counter .ch5-current {
+    color: #fff;
+    font-weight: 800;
 }

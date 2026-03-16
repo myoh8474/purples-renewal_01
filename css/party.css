@@ -211,20 +211,58 @@
 .pty-grid-hover {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.35);
+    background: linear-gradient(0deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.25) 50%, transparent 100%);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 20px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.35s ease;
 }
 
 .pty-grid-item:hover .pty-grid-img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .pty-grid-item:hover .pty-grid-hover {
     opacity: 1;
+}
+
+/* 호버 텍스트 정보 */
+.pty-grid-info {
+    transform: translateY(12px);
+    transition: transform 0.35s var(--ease);
+}
+
+.pty-grid-item:hover .pty-grid-info {
+    transform: translateY(0);
+}
+
+.pty-grid-tag {
+    display: inline-block;
+    font-family: var(--font-en);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold);
+    background: rgba(212,175,55,0.15);
+    border: 1px solid rgba(212,175,55,0.3);
+    padding: 3px 10px;
+    margin-bottom: 8px;
+}
+
+.pty-grid-info h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 3px;
+    line-height: 1.3;
+}
+
+.pty-grid-info p {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 400;
 }
 
 /* 더보기 버튼 */
