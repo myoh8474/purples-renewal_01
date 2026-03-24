@@ -205,10 +205,10 @@ function initHzTimeline() {
         const scrolled = window.pageYOffset - wrapperTop;
         const progress = Math.max(0, Math.min(1, scrolled / scrollableDistance));
 
-        // Move panels horizontally (each panel width + 150px gap)
+        // Move panels horizontally (read actual gap from CSS)
         const panelWidth = panels.firstElementChild ? panels.firstElementChild.offsetWidth : 350;
-        const gap = 150;
-        const totalWidth = (totalPanels * panelWidth) + ((totalPanels - 1) * gap) + 120;
+        const computedGap = parseFloat(getComputedStyle(panels).gap) || 0;
+        const totalWidth = (totalPanels * panelWidth) + ((totalPanels - 1) * computedGap) + 120;
         const maxTranslate = Math.max(0, totalWidth - window.innerWidth);
         const translateX = progress * maxTranslate;
         panels.style.transform = `translateX(-${translateX}px)`;

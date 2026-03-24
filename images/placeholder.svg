@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <rect width="600" height="600" fill="#F0F0F0"/>
+  <!-- 이미지 아이콘 -->
+  <g transform="translate(300, 260)" fill="none" stroke="#BFBFBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-30" y="-25" width="60" height="50" rx="4"/>
+    <circle cx="-12" cy="-8" r="6"/>
+    <polyline points="-30,25 -5,-5 10,10 18,2 30,18"/>
+  </g>
+  <!-- 텍스트 -->
+  <text x="300" y="320" text-anchor="middle" font-family="'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#999999">이미지 준비중입니다</text>
+</svg>
